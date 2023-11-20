@@ -105,6 +105,8 @@ function detectEnd() {
 
 // Handle search
 async function handleSearch(e) {
+    let page = 1;
+    let isSearching = false;
     e.preventDefault();
     const searchTerm = query.value.trim();
     if (searchTerm) {
@@ -125,6 +127,8 @@ result.addEventListener('click', function (e) {
         console.log(`Image clicked! Path: ${imagePath}`);
     }
 });
+
+form.addEventListener('submit', handleSearch);
 
 // Initialize the page
 async function init() {
